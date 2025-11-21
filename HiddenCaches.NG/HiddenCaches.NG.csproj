@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>HiddenCaches.NG</AssemblyName>
+        <Nullable>enable</Nullable>
+        <Configuration>Release</Configuration>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <Target Name="RemoveDirectories" BeforeTargets="BeforeBuild">
+        <RemoveDir Directories="./bin/;./build/" />
+    </Target>
+
+    <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+        <Copy SourceFiles="bin\$(Configuration)\netstandard2.1\$(AssemblyName).dll" DestinationFolder="./build/plugins" />
+    </Target>
+
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp" HintPath="References\EFT\Managed\Assembly-CSharp.dll" Private="False" />
+        <Reference Include="BepInEx" HintPath="References\BepInEx\BepInEx.dll" Private="False" />
+        <Reference Include="HarmonyLib" HintPath="References\BepInEx\0Harmony.dll" Private="False" />
+        <Reference Include="spt-reflection" HintPath="References\BepInEx\spt-reflection.dll" Private="False" />
+        <Reference Include="Comfort" HintPath="References\EFT\Managed\Comfort.dll" Private="False" />
+        <Reference Include="UnityEngine" HintPath="References\EFT\Managed\UnityEngine.dll" Private="False" />
+        <Reference Include="UnityEngine.AudioModule" HintPath="References\EFT\Managed\UnityEngine.AudioModule.dll" Private="False" />
+        <Reference Include="UnityEngine.CoreModule" HintPath="References\EFT\Managed\UnityEngine.CoreModule.dll" Private="False" />
+        <Reference Include="UnityEngine.IMGUIModule" HintPath="References\EFT\Managed\UnityEngine.IMGUIModule.dll" Private="False" />
+        <Reference Include="UnityEngine.ParticleSystemModule" HintPath="References\EFT\Managed\UnityEngine.ParticleSystemModule.dll" Private="False" />
+    </ItemGroup>
+
+</Project>
