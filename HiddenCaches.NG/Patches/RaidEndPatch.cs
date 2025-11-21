@@ -1,11 +1,10 @@
-﻿using Comfort.Common;
+﻿using System.Reflection;
+using Comfort.Common;
 using EFT;
 using HarmonyLib;
-using System.Reflection;
 using SPT.Reflection.Patching;
 
-
-namespace HiddenCaches.NG;
+namespace HiddenCaches.NG.Patches;
 
 public class RaidEndPatch : ModulePatch
 {

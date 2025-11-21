@@ -1,11 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
-using System.Collections.Generic;
-using UnityEngine;
 using EFT.Interactive;
 using SPT.Reflection.Patching;
+using UnityEngine;
 
-namespace HiddenCaches.NG;
+namespace HiddenCaches.NG.Patches;
 
 public class CachePatch : ModulePatch
 {

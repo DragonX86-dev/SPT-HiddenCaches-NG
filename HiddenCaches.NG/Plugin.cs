@@ -3,8 +3,8 @@ using BepInEx;
 using System.Collections;
 using BepInEx.Configuration;
 using BepInEx.Logging;
+using HiddenCaches.NG.Patches;
 using UnityEngine;
-using RaiRai.HiddenCaches.Patches;
 
 namespace HiddenCaches.NG;
 
@@ -25,7 +25,7 @@ public class Plugin : BaseUnityPlugin
     private void Awake()
     {
         Log = Logger;
-        Log.LogInfo("Loading RaiRai.HiddenCaches plugin!");
+        Log.LogInfo("Loading HiddenCaches.NG plugin!");
         
         try
         {
@@ -39,7 +39,7 @@ public class Plugin : BaseUnityPlugin
             Log.LogError(ex.ToString());
         }
         
-        Log.LogInfo("Loaded RaiRai.HiddenCaches plugin!");
+        Log.LogInfo("Loaded HiddenCaches.NG plugin!");
     }
 
     private void InitConfig()
