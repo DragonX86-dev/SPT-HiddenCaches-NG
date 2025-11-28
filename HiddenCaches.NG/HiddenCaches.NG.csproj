@@ -8,11 +8,20 @@
     </PropertyGroup>
 
     <Target Name="RemoveDirectories" BeforeTargets="BeforeBuild">
-        <RemoveDir Directories="./bin/;./build/" />
+        <RemoveDir Directories="./bin/;./build/;./dist/" />
     </Target>
 
     <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-        <Copy SourceFiles="bin\$(Configuration)\netstandard2.1\$(AssemblyName).dll" DestinationFolder="./build/plugins" />
+        <Copy SourceFiles="bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).dll"
+              DestinationFolder="./build/BepInEx/plugins/$(AssemblyName)/" />
+    </Target>
+
+    <Target Name="ZipOutputPath" AfterTargets="Build">
+        <MakeDir Directories="./dist" Condition="!Exists('./dist')" />
+        <Delete Files="./dist/$(AssemblyName)-$(Version).zip"
+                Condition="Exists('./dist/$(AssemblyName)-$(Version).zip')" />
+        <ZipDirectory SourceDirectory="./build"
+                      DestinationFile="./dist/$(AssemblyName)-$(Version).zip" />
     </Target>
 
     <ItemGroup>
