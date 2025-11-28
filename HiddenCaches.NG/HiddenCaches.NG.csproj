@@ -16,10 +16,10 @@
     </Target>
 
     <ItemGroup>
-        <Reference Include="Assembly-CSharp" HintPath="References\EFT\Managed\Assembly-CSharp.dll" Private="False" />
+        <Reference Include="spt-reflection" HintPath="References\SPT\spt-reflection.dll" Private="False" />
         <Reference Include="BepInEx" HintPath="References\BepInEx\BepInEx.dll" Private="False" />
         <Reference Include="HarmonyLib" HintPath="References\BepInEx\0Harmony.dll" Private="False" />
-        <Reference Include="spt-reflection" HintPath="References\BepInEx\spt-reflection.dll" Private="False" />
+        <Reference Include="Assembly-CSharp" HintPath="References\EFT\Managed\Assembly-CSharp.dll" Private="False" />
         <Reference Include="Comfort" HintPath="References\EFT\Managed\Comfort.dll" Private="False" />
         <Reference Include="UnityEngine" HintPath="References\EFT\Managed\UnityEngine.dll" Private="False" />
         <Reference Include="UnityEngine.AudioModule" HintPath="References\EFT\Managed\UnityEngine.AudioModule.dll" Private="False" />

@@ -22,7 +22,6 @@ public class CachePatch : ModulePatch
     [PatchPostfix]
     private static void AddComponentToCaches()
     {
-        // clear old cache if it exists
         HiddenCacheList = [];
 
         HiddenCacheList = Object.FindObjectsOfType<LootableContainer>()
